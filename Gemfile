@@ -43,3 +43,10 @@ group :development, :test do
   gem 'spring'
 end
 
+# Gems for image management
+
+gem 'carrierwave'
+gem 'figaro'
+gem 'fog'
+gem 'mini_magick', '~> 3.5.0'
+gem 'unf'
