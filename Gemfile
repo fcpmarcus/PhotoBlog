@@ -41,6 +41,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Gems for testing
+  gem 'rspec-rails'
 end
 
 # Gems for image management
@@ -50,3 +53,5 @@ gem 'figaro'
 gem 'fog'
 gem 'mini_magick', '~> 3.5.0'
 gem 'unf'
+
+
