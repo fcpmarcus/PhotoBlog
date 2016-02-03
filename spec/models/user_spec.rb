@@ -37,4 +37,30 @@ RSpec.describe User, type: :model do
   	  expect(@user).to_not be_valid
     end
   end
+
+  describe "email validation" do
+    it "should accept valid email addresses" do
+      valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org first.last@foo.jp alice+bob@baz.cn]
+      valid_addresses.each do |valid_address|
+        @user.email = valid_address
+        expect(@user).to be_valid "#{valid_address.inspect} should be valid"
+      end
+    end
+    it "should not accept invalid email addresses" do
+      invalid_addresseses = %w[user@example,com user_at_foo.org user.name@example. foo@bar_baz.com foo@bar+baz.com]
+      invalid_addresseses.each do |invalid_address|
+        @user.email = invalid_address
+        expect(@user).to_not be_valid "#{invalid_address.inspect} should be invalid"
+      end
+    end
+  end
+
+  describe "email uniqueness" do
+    it "should accept a unique email address" do
+      duplicate_user = @user.dup
+      duplicate_user.email = @user.email.upcase
+      @user.save
+      expect(duplicate_user).to_not be_valid
+    end
+  end
 end
