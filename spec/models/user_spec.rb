@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   
   before(:each) do
-  	@user = User.create!(name: "John Doe", email: "testemail@gmail.com", password: "password")
+  	@user = User.create!(name: "Example User", email: "user@example.com", password: "password", password_confirmation: "password")
   end
 
   describe "creation" do
@@ -13,10 +13,6 @@ RSpec.describe User, type: :model do
   end
 
   describe "validations" do
-  	# it "should not let user be created without a name" do
-  	#   @user.name = nil
-  	#   expect(@user).to_not be_valid
-  	# end
     it "should not let user be created without a name" do
       @user.name = nil
       expect(@user).to_not be_valid
@@ -35,6 +31,14 @@ RSpec.describe User, type: :model do
   	it "should not allow a name longer than 50 characters" do
   	  @user.name = "j" * 51
   	  expect(@user).to_not be_valid
+    end
+    it "should not allow an email longer than 255 characters" do
+      @user.email = "j" * 256
+      expect(@user).to_not be_valid
+    end
+    it "should not allow a password with less than 5 characters" do
+      @user.password = "j" * 4
+      expect(@user).to_not be_valid
     end
   end
 
