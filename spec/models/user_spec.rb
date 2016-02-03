@@ -17,6 +17,10 @@ RSpec.describe User, type: :model do
   	#   @user.name = nil
   	#   expect(@user).to_not be_valid
   	# end
+    it "should not let user be created without a name" do
+      @user.name = nil
+      expect(@user).to_not be_valid
+    end
   	it "should not let user be created without an email address" do
   	  @user.email = nil
   	  expect(@user).to_not be_valid
@@ -28,8 +32,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "length validations" do
-  	it "should not allow a name longer than 40 characters" do
-  	  @user.name = "j" * 41
+  	it "should not allow a name longer than 50 characters" do
+  	  @user.name = "j" * 51
   	  expect(@user).to_not be_valid
     end
   end

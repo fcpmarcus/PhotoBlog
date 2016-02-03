@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	
-	validates_presence_of :name, :email, :password
-	validates :name, length: { maximum: 40 }
+	validates :name, presence: true, length: { maximum: 50 }
+	validates :email, presence: true, length: { maximum: 255 }
+	validates :password, presence: true
 end
