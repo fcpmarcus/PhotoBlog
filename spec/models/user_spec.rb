@@ -36,8 +36,8 @@ RSpec.describe User, type: :model do
       @user.email = "j" * 256
       expect(@user).to_not be_valid
     end
-    it "should not allow a password with less than 5 characters" do
-      @user.password = "j" * 4
+    it "should not allow a password with less than 6 characters" do
+      @user.password = @user.password_confirmation = "j" * 5
       expect(@user).to_not be_valid
     end
   end
