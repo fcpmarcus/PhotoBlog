@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MainPageController, type: :controller do
+RSpec.describe MainController, type: :controller do
 
   describe "GET #home" do
     it "returns http success" do
