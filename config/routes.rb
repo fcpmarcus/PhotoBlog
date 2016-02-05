@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'main/home'
   get 'main/about'
+  get 'main/contact'
   get 'users/new'
 
   resources :posts
