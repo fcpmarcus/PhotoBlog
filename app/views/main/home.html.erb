@@ -1,6 +1,4 @@
 <% provide(:title, "Home") %>
-<h1>Photo Blog</h1>
-	<p>This is the home page for my Ruby on Rails Photo Blog</p>
 
 <div class="center jumbotron">
   <h1>Photo Blog</h1>
@@ -10,8 +8,14 @@
     sample application.
   </h2>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+  <%= link_to "Photos!", 'posts#index', class: "btn btn-lg btn-primary" %>
 </div>
-
-<%= link_to image_tag("x100t.png", alt: "Fuji X100T"),
-            'http://www.google.com/' %>
+<div class="container">
+	<div class="row">
+	  <div class="col-md-1 profile-pic"><%= image_tag("profilePic2.png", alt: "MC") %></div>
+	  <div class="col-md-5 col-md-offset-6 text-right">
+	    <h1 class="text-uppercase">M a r c • C r u z</h1>
+	    <h3 class="text-uppercase">Front-end Developer / Photographer for Fun</h3>
+	  </div>
+	</div>
+</div>
