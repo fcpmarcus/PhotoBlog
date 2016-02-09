@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* colors */
+$color1: #337AB7;
+// dark blue
+$color2: #797979;
+// grey
+
 
 /* universal */
 
@@ -18,10 +24,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 /* typography */
@@ -43,7 +48,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: $color2;
 }
 
 p {
@@ -57,31 +62,39 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #666;
+  color: $color2;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-	  color: #fff;
+	  color: $color1;
 	  text-decoration: none;
 	}
 }
+
+.navbar-default .navbar-nav > li > a {
+  color: $color2;
+  &:hover {
+    color: $color1;
+  }
+}
+
+/* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: $color2;
 }
 
 footer a {
-  color: #666;
-}
-
-footer a:hover {
-  color: #666;
-  text-decoration: none;
+  color: $color2;
+  &:hover {
+    color: $color1;
+    text-decoration: none;
+  }
 }
 
 footer ul {
