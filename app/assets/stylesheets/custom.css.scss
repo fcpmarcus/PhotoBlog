@@ -2,11 +2,10 @@
 @import "bootstrap";
 
 /* colors */
+// dark blue //
 $color1: #337AB7;
-// dark blue
+// grey //
 $color2: #797979;
-// grey
-
 
 /* universal */
 
@@ -80,6 +79,18 @@ p {
   }
 }
 
+/* content area */
+
+.container {
+  a {
+  color: $color2;
+    &:hover {
+      color: $color1;
+      text-decoration: none;
+    }
+  }
+  text-align: center;
+}
 /* footer */
 
 footer {
@@ -87,22 +98,19 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: $color2;
-}
-
-footer a {
-  color: $color2;
-  &:hover {
-    color: $color1;
-    text-decoration: none;
+  a {
+    color: $color2;
+    &:hover {
+      color: $color1;
+      text-decoration: none;
+    }
   }
 }
-
 footer ul {
   float: right;
   list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
+  li {
+    float: left;
+    margin-left: 15px;
+  }
 }

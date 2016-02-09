@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root                   'main#home'
   get 'main/about'    => 'main#about'
   get 'main/contact'  => 'main#contact'
-  get 'users/new'
+  get 'signup'        => 'users#new'
 
   resources :posts
 
