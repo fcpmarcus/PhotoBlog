@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root                   'main#home'
   get 'main/about'    => 'main#about'
   get 'main/contact'  => 'main#contact'
