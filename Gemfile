@@ -29,6 +29,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Generate sample data for testing
+gem 'faker', '1.4.2'
+
+# Paginate data for easier viewing
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
