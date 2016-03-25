@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root                       'main#home'
   get     'main/about'    => 'main#about'
   get     'main/contact'  => 'main#contact'
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
